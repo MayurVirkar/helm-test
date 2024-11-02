@@ -7,6 +7,6 @@ dependencies:
   - name: rook-ceph-cluster
     version: 0.0.1
     repository: "file://./charts/rook-ceph-cluster"
-  - name: postgres-ha
+  - name: postgresql-ha
     version: 16.4.0
-    repository: "file://./charts/postgres-ha"
+    repository: "file://./charts/postgresql-ha"

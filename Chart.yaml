@@ -5,5 +5,11 @@ version: 0.1.0
 
 dependencies:
   - name: rook-ceph-cluster
-    version: 0.1.0
+    version: 0.0.1
     repository: "file://./charts/rook-ceph-cluster"
+  - name: postgres-operator
+    version: 1.14.0
+    repository: "file://./charts/postgres-operator"
+  - name: postgres-operator-ui
+    version: 1.13.0
+    repository: "file://./charts/postgres-operator-ui"

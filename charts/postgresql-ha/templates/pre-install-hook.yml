@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: wait-for-rook-ceph-cluster
+  labels:
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: wait-for-rook-ceph-cluster
+          image: bitnami/kubectl:latest
+          command:
+            - /bin/sh
+            - -c
+            - |
+              until kubectl get pods -n rook-ceph -l app=rook-ceph-cluster -o jsonpath='{.items[0].status.phase}' | grep -q 'Running'; do
+                echo "Waiting for rook-ceph-cluster pod to be running..."
+                sleep 5
+              done
+      restartPolicy: Never
+  backoffLimit: 4

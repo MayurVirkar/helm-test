@@ -6,6 +6,9 @@ kind: CephFilesystemSubVolumeGroup
 metadata:
   name: {{ $filesystem.name }}-csi    # lets keep the svg crd name same as `filesystem name + csi` for the default csi svg
   namespace: {{ $root.Release.Namespace }} # namespace:cluster
+  annotations: 
+   "helm.sh/hook": post-install 
+   "helm.sh/hook-weight": "2"
 spec:
   # The name of the subvolume group. If not set, the default is the name of the subvolumeGroup CR.
   name: csi

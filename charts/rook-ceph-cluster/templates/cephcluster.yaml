@@ -4,6 +4,9 @@ kind: CephCluster
 metadata:
   name: {{ default .Release.Namespace .Values.clusterName }}
   namespace: {{ .Release.Namespace }} # namespace:cluster
+  annotations: 
+   "helm.sh/hook": post-install 
+   "helm.sh/hook-weight": "5"
 spec:
 {{- if .Values.monitoring }}
   monitoring:

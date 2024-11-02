@@ -3,8 +3,12 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: cephfs-pvc
+  annotations: 
+   "helm.sh/hook": post-install 
+   "helm.sh/hook-weight": "6"
   labels:
     group: snapshot-test
+    
 spec:
   accessModes:
     - ReadWriteOnce

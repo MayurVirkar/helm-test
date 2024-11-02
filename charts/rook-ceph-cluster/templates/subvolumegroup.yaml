@@ -3,6 +3,9 @@ kind: CephFilesystemSubVolumeGroup
 metadata:
   name: group-a
   namespace: rook-ceph # namespace:cluster
+  annotations: 
+   "helm.sh/hook": post-install 
+   "helm.sh/hook-weight": "3"
 spec:
   # The name of the subvolume group. If not set, the default is the name of the subvolumeGroup CR.
   # name: group-a

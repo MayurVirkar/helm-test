@@ -15,9 +15,6 @@ spec:
             - /bin/sh
             - -c
             - |
-              until kubectl get pods -n rook-ceph -l app=rook-ceph-cluster -o jsonpath='{.items[0].status.phase}' | grep -q 'Running'; do
-                echo "Waiting for rook-ceph-cluster pod to be running..."
-                sleep 5
-              done
+                sleep 60
       restartPolicy: Never
   backoffLimit: 4

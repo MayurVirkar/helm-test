@@ -6,6 +6,9 @@ kind: CephBlockPool
 metadata:
   name: {{ $ecblockpool.name }}
   namespace: {{ $root.Release.Namespace }} # namespace:cluster
+  annotations: 
+   "helm.sh/hook": post-install 
+   "helm.sh/hook-weight": "1"
 spec:
 {{ toYaml $ecblockpool.spec.dataPool | indent 2 }}
 ---

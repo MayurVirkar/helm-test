@@ -33,19 +33,19 @@ global:
   defaultStorageClass: "ceph-filesystem"
   storageClass: "ceph-filesystem"
   postgresql:
-    username: "test1234"
-    password: "test1234"
-    database: "test1234"
-    repmgrUsername: ""
-    repmgrPassword: ""
-    repmgrDatabase: ""
+    username: "postgres"
+    password: "test@1234"
+    database: "postgres"
+    repmgrUsername: "repmgr"
+    repmgrPassword: "repmgr"
+    repmgrDatabase: "repmgr"
     existingSecret: ""
   ldap:
     bindpw: ""
     existingSecret: ""
   pgpool:
-    adminUsername: "test1234"
-    adminPassword: "test1234"
+    adminUsername: "pgpool"
+    adminPassword: "pgpool"
     existingSecret: ""
   ## Compatibility adaptations for Kubernetes platforms
   ##
@@ -507,7 +507,7 @@ postgresql:
   ## @param postgresql.repmgrChildNodesDisconnectTimeout Repmgr time before node will be fenced when insufficient child nodes are detected (in seconds)
   ##
   repmgrUsername: repmgr
-  repmgrPassword: ""
+  repmgrPassword: "repmgr"
   repmgrDatabase: repmgr
   repmgrLogLevel: NOTICE
   repmgrConnectTimeout: 5

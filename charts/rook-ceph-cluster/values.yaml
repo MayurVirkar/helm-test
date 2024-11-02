@@ -603,7 +603,7 @@ cephObjectStores:
             memory: "1Gi"
         # securePort: 443
         # sslCertificateRef:
-        instances: 1
+        instances: 3
         priorityClassName: system-cluster-critical
     storageClass:
       enabled: true

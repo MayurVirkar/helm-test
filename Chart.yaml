@@ -1,0 +1,9 @@
+apiVersion: v2
+name: fleet
+description: An umbrella chart for deploying multiple applications
+version: 0.1.0
+
+dependencies:
+  - name: rook-ceph-cluster
+    version: 0.1.0
+    repository: "file://./charts/rook-ceph-cluster"

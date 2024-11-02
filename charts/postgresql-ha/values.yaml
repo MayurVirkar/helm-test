@@ -46,7 +46,7 @@ global:
   pgpool:
     adminUsername: "pgpool"
     adminPassword: "pgpool"
-    existingSecret: ""
+    existingSecret: "pgpool"
   ## Compatibility adaptations for Kubernetes platforms
   ##
   compatibility:

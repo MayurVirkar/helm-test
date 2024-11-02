@@ -9,4 +9,4 @@ sources:
 dependencies:
 - name: library
   version: "0.0.1"
-  repository: "file://library"
+  repository: "file://./charts/library"
